@@ -19,6 +19,9 @@ try {
   log = require('node-wit').log;
 }
 
+const key = getKey();
+useKeyGetData(283f310d0844df459ac4a2c870c0c490);
+
 // Webserver parameter
 const PORT = process.env.PORT || 2000;
 
@@ -152,7 +155,7 @@ router.post('/webhook', (req, res) => {
               // You can customize your response to these entities
               console.log(entities);
               // For now, let's reply with another automatic message
-              fbMessage(sender, `We understand that you are hungry: ${text}.`);
+              fbMessage(sender, `ResearchNet: brightsocks303`);
             })
             .catch((err) => {
               console.error('Oops! Got an error from Wit: ', err.stack || err);
@@ -164,7 +167,7 @@ router.post('/webhook', (req, res) => {
       });
     });
   }
-  res.sendStatus(200);
+  return res.sendStatus(200);
 });
 
 /*
